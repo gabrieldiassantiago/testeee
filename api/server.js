@@ -3,6 +3,7 @@ const jsonServer = require('json-server')
 
 const server = jsonServer.create()
 
+
 // Uncomment to allow write operations
 // const fs = require('fs')
 // const path = require('path')
@@ -12,7 +13,9 @@ const server = jsonServer.create()
 // const router = jsonServer.router(db)
 
 // Comment out to allow write operations
-const router = jsonServer.router('db.json')
+const router = jsonServer.router('db.json' {
+    _isFake: true
+})
 
 const middlewares = jsonServer.defaults()
 
