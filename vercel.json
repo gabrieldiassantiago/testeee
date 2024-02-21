@@ -2,17 +2,13 @@
   "functions": {
     "api/server.js": {
       "memory": 1024,
-      "maxDuration": 1
+      "includeFiles": "db.json"
     }
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/tags",
-      "methods": ["GET", "POST", "OPTIONS"],
-          "headers": {
-              "Access-Control-Allow-Origin": "https://react-blush-beta.vercel.app"
-          },
-      "dest": "api/server.js"
+      "source": "/(.*)",
+      "destination": "api/server.js"
     }
   ]
 }
